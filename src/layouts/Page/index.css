@@ -1,0 +1,33 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+  max-width: var(--maxWidth);
+  padding: 1rem 0.75rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0;
+  padding: 10vh 0;
+  text-align: center;
+  background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      color(var(--mainColorDark) l(+ 10%)) 15%,
+      var(--mainColorDark) 70%
+    );
+}
+
+.heading {
+  color: var(--mainColorContrasted);
+  font-weight: 300;
+}

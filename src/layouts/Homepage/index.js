@@ -3,10 +3,19 @@ import enhanceCollection from "phenomic/lib/enhance-collection"
 
 import Page from "../Page"
 import PagesList from "../../components/PagesList"
+import CTA from "../../components/CTA"
+
+import gitHubSvg from "../../icons/iconmonstr-github-1.svg"
 
 const numberOfLatestPosts = 6
 
-const Homepage = (props, { collection }) => {
+const Homepage = (
+  props,
+  {
+    collection,
+    metadata: { pkg },
+  }
+) => {
   const latestPosts = enhanceCollection(collection, {
     filter: { layout: "Post" },
     sort: "date",
@@ -16,6 +25,15 @@ const Homepage = (props, { collection }) => {
 
   return (
     <Page { ...props }>
+      <CTA
+        href={ pkg.repository }
+        icon={ gitHubSvg }
+        buttonText={ "MoOx/react-toulouse sur GitHub" }
+        style={{ margin: "2rem" }}
+      >
+        Intéragissez avec nous concernant l'organisation
+        des évènements à venir sur notre dépôt GitHub.
+      </CTA>
       {
         latestPosts.length > 0 &&
         <div>
@@ -29,6 +47,7 @@ const Homepage = (props, { collection }) => {
 
 Homepage.contextTypes = {
   collection: PropTypes.array.isRequired,
+  metadata: PropTypes.object.isRequired,
 }
 
 export default Homepage

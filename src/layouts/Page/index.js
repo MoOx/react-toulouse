@@ -4,6 +4,8 @@ import invariant from "invariant"
 import { BodyContainer, joinUri } from "phenomic"
 
 import Loading from "../../components/Loading"
+import CTA from "../../components/CTA"
+import twitterSvg from "../../icons/iconmonstr-twitter-1.svg"
 
 import styles from "./index.css"
 
@@ -56,10 +58,32 @@ const Page = (
           <div className={ styles.wrapper }>
             <img src="/assets/react.svg" width="128" height="128" />
             <h1 className={ styles.heading }>{ head.title }</h1>
+            {
+              head.cta &&
+              <div className={ styles.ctas }>
+                <CTA
+                  href={ `https://twitter.com/${ pkg.twitter }` }
+                  icon={ twitterSvg }
+                  buttonText={ "@ReactToulouse sur Twitter" }
+                >
+                  Suivez nous sur Twitter pour être prévenu des
+                  dates et lieux des prochaines rencontres.
+                </CTA>
+
+                <CTA
+                  href={ "http://eepurl.com/cnF-6v" }
+                  buttonStyle={ "Inverted" }
+                  buttonText={ "Inscrivez-vous notre mailing liste" }
+                >
+                  Restez informés via notre newsletter
+                  pour ne ratez aucun rassemblement !
+                </CTA>
+              </div>
+            }
           </div>
         </div>
       }
-      <div className={ styles.wrapper }>
+      <div className={ styles.wrapper + " " + styles.body }>
         { header }
         {
           isLoading

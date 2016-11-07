@@ -1,6 +1,7 @@
 ---
 title: React Toulouse
 layout: Homepage
+cta: true
 ---
 
 **React Toulouse** est un regroupement de passionnées autour de l'écosystème
@@ -10,11 +11,6 @@ L'idée est d'organiser régulièrement des conférences, workshops et discussio
 afin de faire découvrir ou approfondir l'écosystème React et son ensemble.
 
 Une première rencontre sera organisé **courant Janvier 2017**.
-
----
-
-**💜 Pour rester informer, suivez nous sur Twitter:
-[@ReactToulouse](https://twitter.com/ReactToulouse)**
 
 ---
 

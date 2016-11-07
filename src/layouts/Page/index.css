@@ -1,6 +1,10 @@
 .page {
   display: flex;
   flex-direction: column;
+  /*font-size: 1.3rem;
+  line-height: 2rem;*/
+  color: #333;
+  font-weight: 300;
 }
 
 .wrapper {
@@ -17,17 +21,46 @@
   display: flex;
   flex-direction: column;
   padding: 5rem 0;
-  padding: 10vh 0;
+  padding: 6vh 0;
   text-align: center;
+  color: var(--mainColorContrasted);
   background:
     radial-gradient(
+      ellipse at 50% 30%,
+      color(var(--mainColorLight) a(0.7)) 15%,
+      color(#000 a(0.8)) 70%
+    ),
+    linear-gradient(
+      color(#000 a(0)) 50%,
+      color(#000 a(0.6))
+    ),
+    /*radial-gradient(
       ellipse at 50% 50%,
-      color(var(--mainColorDark) l(+ 10%)) 15%,
-      var(--mainColorDark) 70%
-    );
+      color(var(--mainColorDark) l(+ 15%) a(0.9)) 15%,
+      color(var(--mainColorDark) a(0.95)) 70%
+    ),*/
+    /* https://www.flickr.com/photos/falcon_33/30626854706/ */
+    /* url("https://farm6.staticflickr.com/5526/30626854706_feb72a9436_k_d.jpg") */
+    /* https://www.flickr.com/photos/marc-dupuy/12889862044/*/
+    url("https://farm8.staticflickr.com/7308/12889862044_65568078ee_k_d.jpg")
+    50% 30% / cover;
 }
 
 .heading {
-  color: var(--mainColorContrasted);
   font-weight: 300;
+  text-shadow: 0 0 10px #000;
+}
+
+.ctas {
+  width: 100%;
+  margin: 2rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.body {
+
 }

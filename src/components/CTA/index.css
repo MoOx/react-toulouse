@@ -1,0 +1,37 @@
+.cta {
+  max-width: 20rem;
+  margin: auto;
+
+  & svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+}
+
+.button,
+.buttonInverted {
+  display: inline-block;
+  font-size: 0.9rem;
+  padding: 1rem;
+  border-radius: 10rem;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button {
+  color: #fff;
+  background:
+    linear-gradient(
+      var(--mainColorLight),
+      var(--mainColor)
+    );
+}
+
+.buttonInverted {
+  color: var(--mainColor);
+  background: #fff;
+  font-weight: 600;
+}

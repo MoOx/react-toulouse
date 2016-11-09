@@ -1,10 +1,11 @@
 import React, { PropTypes } from "react"
 import Helmet from "react-helmet"
-import invariant from "invariant"
+import warning from "warning"
 import { BodyContainer, joinUri } from "phenomic"
+import { Link } from "react-router"
 
 import Loading from "../../components/Loading"
-import CTA from "../../components/CTA"
+import Cta from "../../components/CTA"
 import twitterSvg from "../../icons/iconmonstr-twitter-1.svg"
 
 import styles from "./index.css"
@@ -24,12 +25,12 @@ const Page = (
     metadata: { pkg },
   }
 ) => {
-  invariant(
+  warning(
     typeof head.title === "string",
     `Your page '${ __filename }' needs a title`
   )
 
-  const metaTitle = head.metaTitle ? head.metaTitle : head.title
+  const metaTitle = head && head.metaTitle ? head.metaTitle : head.title
 
   const meta = [
     { property: "og:type", content: "article" },
@@ -52,37 +53,38 @@ const Page = (
         title={ metaTitle }
         meta={ meta }
       />
-      {
-        head.title &&
-        <div className={ styles.header }>
-          <div className={ styles.wrapper }>
+      <div className={ styles.header }>
+        <div className={ styles.wrapper }>
+          <Link to="/">
             <img src="/assets/react.svg" width="128" height="128" />
-            <h1 className={ styles.heading }>{ head.title }</h1>
-            {
-              head.cta &&
-              <div className={ styles.ctas }>
-                <CTA
-                  href={ `https://twitter.com/${ pkg.twitter }` }
-                  icon={ twitterSvg }
-                  buttonText={ "@ReactToulouse sur Twitter" }
-                >
-                  Suivez nous sur Twitter pour être prévenu des
-                  dates et lieux des prochaines rencontres.
-                </CTA>
+          </Link>
+          <h1 className={ styles.heading }>
+            { head.title || "React Toulouse" }
+          </h1>
+          {
+            head.cta &&
+            <div className={ styles.ctas }>
+              <Cta
+                href={ `https://twitter.com/${ pkg.twitter }` }
+                icon={ twitterSvg }
+                buttonText="@ReactToulouse sur Twitter"
+              >
+                Suivez nous sur Twitter pour être prévenu des
+                dates et lieux des prochaines rencontres.
+              </Cta>
 
-                <CTA
-                  href={ "http://eepurl.com/cnF-6v" }
-                  buttonStyle={ "Inverted" }
-                  buttonText={ "Inscrivez-vous notre mailing liste" }
-                >
-                  Restez informés via notre newsletter
-                  pour ne ratez aucun rassemblement !
-                </CTA>
-              </div>
-            }
-          </div>
+              <Cta
+                href={ "http://eepurl.com/cnF-6v" }
+                buttonStyle={ "Inverted" }
+                buttonText={ "Inscrivez-vous notre mailing liste" }
+              >
+                Restez informés via notre newsletter
+                pour ne ratez aucun rassemblement !
+              </Cta>
+            </div>
+          }
         </div>
-      }
+      </div>
       <div className={ styles.wrapper + " " + styles.body }>
         { header }
         {

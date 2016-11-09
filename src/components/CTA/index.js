@@ -3,19 +3,19 @@ import Svg from "react-svg-inline"
 
 import styles from "./index.css"
 
-const CTA = ({
+const Cta = ({
   children,
   buttonStyle = "",
   href,
   icon,
   buttonText,
-  style
+  style,
 }) => {
   return (
     <div className={ styles.cta } style={ style }>
       { children && <p>{ children }</p> }
       <a
-        className={ styles["button" + buttonStyle ] }
+        className={ styles["button" + buttonStyle] }
         href={ href }
       >
         { icon && <Svg svg={ icon } cleanup /> }
@@ -25,7 +25,7 @@ const CTA = ({
   )
 }
 
-CTA.propTypes = {
+Cta.propTypes = {
   children: React.PropTypes.node,
   buttonStyle: React.PropTypes.string,
   href: React.PropTypes.string.isRequired,
@@ -34,4 +34,4 @@ CTA.propTypes = {
   style: React.PropTypes.object,
 }
 
-export default CTA
+export default Cta

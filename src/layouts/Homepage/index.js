@@ -3,8 +3,7 @@ import enhanceCollection from "phenomic/lib/enhance-collection"
 
 import Page from "../Page"
 import PagesList from "../../components/PagesList"
-import CTA from "../../components/CTA"
-
+import Cta from "../../components/CTA"
 import gitHubSvg from "../../icons/iconmonstr-github-1.svg"
 
 const numberOfLatestPosts = 6
@@ -25,15 +24,15 @@ const Homepage = (
 
   return (
     <Page { ...props }>
-      <CTA
+      <Cta
         href={ pkg.repository }
         icon={ gitHubSvg }
-        buttonText={ "MoOx/react-toulouse sur GitHub" }
+        buttonText="MoOx/react-toulouse sur GitHub"
         style={{ margin: "2rem" }}
       >
-        Intéragissez avec nous concernant l'organisation
+        Intéragissez avec nous concernant l’organisation
         des évènements à venir sur notre dépôt GitHub.
-      </CTA>
+      </Cta>
       {
         latestPosts.length > 0 &&
         <div>

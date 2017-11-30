@@ -10,9 +10,9 @@
     "lint": "npm-run-all --parallel lint:*",
     "start": "phenomic start",
     "build": "phenomic build",
-    "pretest": "npm run lint",
-    "test": "npm run build",
-    "predeploy": "npm run build",
+    "pretest": "yarn lint",
+    "test": "yarn build",
+    "predeploy": "yarn build",
     "deploy": "./scripts/deploy.sh"
   },
   "phenomic": {

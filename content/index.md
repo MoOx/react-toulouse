@@ -10,12 +10,12 @@ cta: true
 L'idée est d'organiser régulièrement des conférences, workshops et discussions
 afin de faire découvrir ou approfondir l'écosystème React et son ensemble.
 
-Une première rencontre sera organisé **courant Janvier 2017**.
+Une première rencontre est à définir. N'hésitez pas à nous contacter si vous êtes motivé.
 
 ---
 
-Au programme de ce premier meetup :
+Au programme de ce premier meetup, il serait bien d'avoir :
 
 - Rappel des problématiques résolues par React
 - Introduction à React
-- Commment tester automatiquement son code avec Jest
+- Introduction à React-Native

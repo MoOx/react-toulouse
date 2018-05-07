@@ -12,8 +12,6 @@ afin de faire découvrir ou approfondir l'écosystème React et son ensemble.
 
 ---
 
-Une première rencontre aura lieu le **10 avril, 2018** (18:30 à 20:30 PM).
+Une deuxième rencontre aura lieu le **22 mai, 2018** (18:30 à 20:00).
 
-🔜 [meetup.com/ReactJS-React-Native-Toulouse/events/248986890/](https://www.meetup.com/ReactJS-React-Native-Toulouse/events/248986890/)
-
-N'hésitez pas à nous contacter si vous êtes motivé.
+🔜 [https://www.meetup.com/fr-FR/ReactJS-React-Native-Toulouse/events/mdcxnpyxhblb/](https://www.meetup.com/fr-FR/ReactJS-React-Native-Toulouse/events/mdcxnpyxhblb/)

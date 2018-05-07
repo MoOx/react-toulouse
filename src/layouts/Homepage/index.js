@@ -27,7 +27,7 @@ const Homepage = (
       <Cta
         href={ pkg.repository }
         icon={ gitHubSvg }
-        buttonText="MoOx/react-toulouse sur GitHub"
+        buttonText="react-toulouse sur GitHub"
         style={{ margin: "2rem" }}
       >
         Intéragissez avec nous concernant l’organisation

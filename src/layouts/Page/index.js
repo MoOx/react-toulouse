@@ -6,13 +6,13 @@ import {
   textRenderer
 } from "@phenomic/preset-react-app/lib/client";
 
-import Loading from "../../components/Loading"
-import Cta from "../../components/CTA"
-import twitterSvg from "../../icons/iconmonstr-twitter-1.svg"
+import Loading from "../../components/Loading";
+import Cta from "../../components/CTA";
+import twitterSvg from "../../icons/iconmonstr-twitter-1.svg";
 import pkg from "../../../package.json";
 import PageError from "../PageError";
 
-import styles from "./index.css"
+import styles from "./index.css";
 
 const Page = props => {
   if (props.hasError) {
@@ -94,4 +94,4 @@ const Page = props => {
   );
 };
 
-export default Page
+export default Page;

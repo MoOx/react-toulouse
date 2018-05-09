@@ -1,26 +1,23 @@
 import React from "react";
 
-import Page from "../Page"
+import Page from "../Page";
 
-const Post = (props) => {
+const Post = props => {
   // it's up to you to choose what to do with this layout ;)
-  const pageDate = props.head.date ? new Date(props.head.date) : null
+  const pageDate = props.head.date ? new Date(props.head.date) : null;
 
   return (
     <Page
-      { ...props }
+      {...props}
       header={
         <header>
-          {
-          pageDate &&
-          <time key={ pageDate.toISOString() }>
-            { pageDate.toDateString() }
-          </time>
-        }
+          {pageDate && (
+            <time key={pageDate.toISOString()}>{pageDate.toDateString()}</time>
+          )}
         </header>
       }
     />
-  )
-}
+  );
+};
 
-export default Post
+export default Post;

@@ -23,11 +23,7 @@
 
 .button {
   color: #fff;
-  background:
-    linear-gradient(
-      var(--mainColorLight),
-      var(--mainColor)
-    );
+  background: linear-gradient(var(--mainColorLight), var(--mainColor));
 }
 
 .buttonInverted {

@@ -1,12 +1,9 @@
 import React from "react";
 
-import styles from "./index.css"
+import styles from "./index.css";
 
-const Container = (props) => (
-  <div className={ styles.container }>
-    { props.children }
-  </div>
-)
+const Container = props => (
+  <div className={styles.container}>{props.children}</div>
+);
 
-
-export default Container
+export default Container;

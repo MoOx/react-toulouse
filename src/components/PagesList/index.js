@@ -1,25 +1,23 @@
-import React from "react"
+import React from "react";
 
-import PagePreview from "../PagePreview"
+import PagePreview from "../PagePreview";
 
 const PagesList = ({ path, pages }) => {
   return (
     <div>
-      {
-      pages.length
-      ? (
+      {pages.length ? (
         <ul>
-          {
-          pages.map((page) => (
-            <li key={ page.title }><PagePreview path={path} { ...page } /></li>
-          ))
-        }
+          {pages.map(page => (
+            <li key={page.title}>
+              <PagePreview path={path} {...page} />
+            </li>
+          ))}
         </ul>
-      )
-      : "No posts yet."
-    }
+      ) : (
+        "No posts yet."
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default PagesList
+export default PagesList;

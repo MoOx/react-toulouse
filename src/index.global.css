@@ -5,7 +5,9 @@
  *
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  */
-html { box-sizing: border-box; }
+html {
+  box-sizing: border-box;
+}
 
 *,
 *::before,
@@ -35,7 +37,8 @@ body {
   line-height: 1.5rem;
 
   /* system font https://medium.com/designing-medium/system-shock-6b1dc6d6596f */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 /*
@@ -58,7 +61,10 @@ body {
 .phenomic-HeadingAnchor {
   display: inline-block;
   text-align: center;
-  margin-left: calc(-1 * (var(--phenomic-HeadingAnchor-width) + var(--phenomic-HeadingAnchor-margin)));
+  margin-left: calc(
+    -1 * (var(--phenomic-HeadingAnchor-width) +
+          var(--phenomic-HeadingAnchor-margin))
+  );
   margin-right: var(--phenomic-HeadingAnchor-margin);
   width: var(--phenomic-HeadingAnchor-width);
   line-height: var(--phenomic-HeadingAnchor-width);
@@ -85,5 +91,10 @@ hr {
   margin: 2rem 0;
   height: 1px;
   border: 0;
-  background-image: linear-gradient(to right, color(#000 a(0.1)), color(#000 a(0.25)), color(#000 a(0.1)));
+  background-image: linear-gradient(
+    to right,
+    color(#000 a(0.1)),
+    color(#000 a(0.25)),
+    color(#000 a(0.1))
+  );
 }

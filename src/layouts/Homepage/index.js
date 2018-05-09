@@ -20,7 +20,7 @@ const Homepage = props => {
         props.latestPosts.node.list.length > 0 && (
           <div>
             <h2>{"Les précédents meetups"}</h2>
-            <PagesList path="posts" pages={props.latestPosts.node.list} />
+            <PagesList path="meetup" pages={props.latestPosts.node.list} />
           </div>
         )}
       <hr />
@@ -42,7 +42,7 @@ const HomepageContainer = withPhenomicApi(Homepage, props => ({
     id: props.params.splat || ""
   }),
   latestPosts: query({
-    path: "posts"
+    path: "meetup"
   })
 }));
 

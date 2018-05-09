@@ -14,24 +14,26 @@ const numberOfLatestPosts = 6
 const Homepage = props => {
   return (
     <Page { ...props }>
-      <Cta
-        href={ pkg.repository }
-        icon={ gitHubSvg }
-        buttonText="react-toulouse sur GitHub"
-        style={{ margin: "2rem" }}
-      >
-        Intéragissez avec nous concernant l’organisation
-        des évènements à venir sur notre dépôt GitHub.
-      </Cta>
+      <hr />
       {props.latestPosts &&
         props.latestPosts.node &&
         props.latestPosts.node.list &&
         props.latestPosts.node.list.length > 0 && (
           <div>
-            <h2>{"Latest Posts"}</h2>
+            <h2>{"Les précédents meetups"}</h2>
             <PagesList path="posts" pages={props.latestPosts.node.list} />
           </div>
         )}
+      <hr />
+      <Cta
+        href={ pkg.repository }
+        icon={ gitHubSvg }
+        buttonText="react-toulouse sur GitHub"
+        style={{ margin: "2rem", textAlign: "center" }}
+      >
+        Intéragissez avec nous concernant l’organisation
+        des évènements à venir sur notre dépôt GitHub.
+      </Cta>
     </Page>
   )
 }
@@ -41,8 +43,7 @@ const HomepageContainer = withPhenomicApi(Homepage, props => ({
     id: props.params.splat || ""
   }),
   latestPosts: query({
-    path: "posts",
-    limit: 6
+    path: "posts"
   })
 }));
 

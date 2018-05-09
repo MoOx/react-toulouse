@@ -5,7 +5,7 @@ const PagePreview = ({ path, id, title, date }) => {
   const pageDate = date ? new Date(date) : null
 
   return (
-    <div>
+    <div style={{fontSize: "24px"}}>
       <Link to={`${path}/${id}`}>
         { title }
       </Link>

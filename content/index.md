@@ -12,6 +12,7 @@ afin de faire découvrir ou approfondir l'écosystème React et son ensemble.
 
 ---
 
-Une deuxième rencontre aura lieu le **22 mai, 2018** (18:30 à 20:00).
+Une deuxième rencontre aura lieu le **22 mai 2018** (de 18:30 à 21:00) à [**HarryCow coworking** (
+_13 rue Sainte Ursule, Toulouse_)](https://www.openstreetmap.org/node/5206871437).
 
 🔜 [https://www.meetup.com/fr-FR/ReactJS-React-Native-Toulouse/events/mdcxnpyxhblb/](https://www.meetup.com/fr-FR/ReactJS-React-Native-Toulouse/events/mdcxnpyxhblb/)

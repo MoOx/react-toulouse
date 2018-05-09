@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react"
+import React from "react";
 
 import styles from "./index.css"
 
@@ -7,9 +7,5 @@ const Content = (props) => (
     { props.children }
   </div>
 )
-
-Content.propTypes = {
-  children: PropTypes.node,
-}
 
 export default Content

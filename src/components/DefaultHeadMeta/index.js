@@ -1,14 +1,12 @@
-import React, { PropTypes } from "react"
-import Helmet from "react-helmet"
+import React from "react";
+import Helmet from "react-helmet";
 
-const DefaultHeadMeta = (props, { metadata: { pkg } }) => (
+import pkg from "../../../package.json";
+
+const DefaultHeadMeta = props => (
   <div hidden>
     <Helmet
       meta={ [
-        {
-          name: "generator", content: `${
-          process.env.PHENOMIC_NAME } ${ process.env.PHENOMIC_VERSION }`,
-        },
         { property: "og:site_name", content: pkg.name },
         { name: "twitter:site", content: `@${ pkg.twitter }` },
         ...props.meta ? props.meta : [],
@@ -28,14 +26,5 @@ const DefaultHeadMeta = (props, { metadata: { pkg } }) => (
     <style>{ "@-ms-viewport { width: device-width; }" }</style>
   </div>
 )
-
-DefaultHeadMeta.propTypes = {
-  meta: React.PropTypes.arrayOf(React.PropTypes.object),
-  scripts: React.PropTypes.arrayOf(React.PropTypes.object),
-}
-
-DefaultHeadMeta.contextTypes = {
-  metadata: PropTypes.object.isRequired,
-}
 
 export default DefaultHeadMeta

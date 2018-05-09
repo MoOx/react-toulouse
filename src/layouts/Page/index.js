@@ -1,117 +1,97 @@
-import React, { PropTypes } from "react"
-import Helmet from "react-helmet"
-import warning from "warning"
-import { BodyContainer, joinUri } from "phenomic"
-import { Link } from "react-router"
+import React from "react";
+import Helmet from "react-helmet";
+import { Link } from "react-router";
+import {
+  BodyRenderer,
+  textRenderer
+} from "@phenomic/preset-react-app/lib/client";
 
 import Loading from "../../components/Loading"
 import Cta from "../../components/CTA"
 import twitterSvg from "../../icons/iconmonstr-twitter-1.svg"
+import pkg from "../../../package.json";
+import PageError from "../PageError";
 
 import styles from "./index.css"
 
-const Page = (
-  {
-    isLoading,
-    __filename,
-    __url,
-    head,
-    body,
-    header,
-    footer,
-    children,
-  },
-  {
-    metadata: { pkg },
+const Page = props => {
+  if (props.hasError) {
+    return <PageError />;
   }
-) => {
-  warning(
-    typeof head.title === "string",
-    `Your page '${ __filename }' needs a title`
-  )
 
-  const metaTitle = head && head.metaTitle ? head.metaTitle : head.title
+  let metaTitle;
+  let meta;
 
-  const meta = [
-    { property: "og:type", content: "article" },
-    { property: "og:title", content: metaTitle },
-    {
-      property: "og:url",
-      content: joinUri(process.env.PHENOMIC_USER_URL, __url),
-    },
-    { property: "og:description", content: head.description },
-    { name: "twitter:card", content: "summary" },
-    { name: "twitter:title", content: metaTitle },
-    { name: "twitter:creator", content: `@${ pkg.twitter }` },
-    { name: "twitter:description", content: head.description },
-    { name: "description", content: head.description },
-  ]
+  if (props.page.node) {
+    metaTitle = props.page.node.metaTitle
+      ? props.page.node.metaTitle
+      : props.page.node.title;
+    const description = textRenderer(props.page.node.body).slice(0, 150);
+    meta = [
+      { property: "og:type", content: "article" },
+      { property: "og:title", content: metaTitle },
+      {
+        property: "og:url",
+        content: pkg.phenomic.url + props.location.pathname
+      },
+      { property: "og:description", content: description },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: metaTitle },
+      { name: "twitter:creator", content: `@${pkg.twitter}` },
+      { name: "twitter:description", content: description },
+      { name: "description", content: description }
+    ];
+  }
 
   return (
-    <div className={ styles.page }>
-      <Helmet
-        title={ metaTitle }
-        meta={ meta }
-      />
-      <div className={ styles.header }>
-        <div className={ styles.wrapper }>
+    <div className={styles.page}>
+      {meta && <Helmet title={metaTitle} meta={meta} />}
+      <div className={styles.header}>
+        <div className={styles.wrapper}>
           <Link to="/">
             <img src="/assets/react.svg" width="128" height="128" />
           </Link>
-          <h1 className={ styles.heading }>
-            { head.title || "React Toulouse" }
+          <h1 className={styles.heading}>
+            {props.isLoading
+              ? "..."
+              : (props.page.node && props.page.node.title) || "React Toulouse"}
           </h1>
-          {
-            head.cta &&
-            <div className={ styles.ctas }>
-              <Cta
-                href={ `https://twitter.com/${ pkg.twitter }` }
-                icon={ twitterSvg }
-                buttonText="@ReactToulouse sur Twitter"
-              >
-                Suivez nous sur Twitter pour être prévenu des
-                dates et lieux des prochaines rencontres.
-              </Cta>
+          {props.page.node &&
+            props.page.node.cta && (
+              <div className={styles.ctas}>
+                <Cta
+                  href={`https://twitter.com/${pkg.twitter}`}
+                  icon={twitterSvg}
+                  buttonText="@ReactToulouse sur Twitter"
+                >
+                  Suivez nous sur Twitter pour être prévenu des dates et lieux
+                  des prochaines rencontres.
+                </Cta>
 
-              <Cta
-                href={ "http://eepurl.com/cnF-6v" }
-                buttonStyle={ "Inverted" }
-                buttonText={ "Inscrivez-vous notre mailing liste" }
-              >
-                Restez informés via notre newsletter
-                pour ne ratez aucun rassemblement !
-              </Cta>
-            </div>
-          }
+                <Cta
+                  href={"http://eepurl.com/cnF-6v"}
+                  buttonStyle={"Inverted"}
+                  buttonText={"Inscrivez-vous notre mailing liste"}
+                >
+                  Restez informés via notre newsletter pour ne ratez aucun
+                  rassemblement !
+                </Cta>
+              </div>
+            )}
         </div>
       </div>
-      <div className={ styles.wrapper + " " + styles.body }>
-        { header }
-        {
-          isLoading
-          ? <Loading />
-          : <BodyContainer>{ body }</BodyContainer>
-        }
-        { children }
-        { footer }
+      <div className={styles.wrapper + " " + styles.body}>
+        {props.header}
+        {props.isLoading ? (
+          <Loading />
+        ) : (
+          props.page.node && <BodyRenderer>{props.page.node.body}</BodyRenderer>
+        )}
+        {props.children}
+        {props.footer}
       </div>
     </div>
-  )
-}
-
-Page.propTypes = {
-  isLoading: PropTypes.bool,
-  children: PropTypes.node,
-  __filename: PropTypes.string,
-  __url: PropTypes.string,
-  head: PropTypes.object.isRequired,
-  body: PropTypes.string,
-  header: PropTypes.element,
-  footer: PropTypes.element,
-}
-
-Page.contextTypes = {
-  metadata: PropTypes.object.isRequired,
-}
+  );
+};
 
 export default Page

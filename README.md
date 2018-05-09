@@ -1,19 +1,19 @@
-# [Phenomic](https://github.com/MoOx/phenomic) phenomic-theme-base
+# React Toulouse Website
 
 ## Install dependencies
 
-```sh
-npm install
+```console
+yarn install
 ```
 
 ## Run development server
 
-```sh
-npm start
+```console
+yarn start
 ```
 
-## Build for production
+## Deploy
 
-```sh
-npm run build
+```console
+yarn deploy
 ```

@@ -1,27 +1,17 @@
-import React, { PropTypes } from "react"
-import enhanceCollection from "phenomic/lib/enhance-collection"
+import React from "react";
+import { withPhenomicApi, query } from "@phenomic/preset-react-app/lib/client";
 
 import Page from "../Page"
 import PagesList from "../../components/PagesList"
 import Cta from "../../components/CTA"
 import gitHubSvg from "../../icons/iconmonstr-github-1.svg"
+import pkg from "../../../package.json";
+import Loading from "../../components/Loading";
 
 const numberOfLatestPosts = 6
 
-const Homepage = (
-  props,
-  {
-    collection,
-    metadata: { pkg },
-  }
-) => {
-  const latestPosts = enhanceCollection(collection, {
-    filter: { layout: "Post" },
-    sort: "date",
-    reverse: true,
-  })
-  .slice(0, numberOfLatestPosts)
 
+const Homepage = props => {
   return (
     <Page { ...props }>
       <Cta
@@ -33,20 +23,27 @@ const Homepage = (
         Intéragissez avec nous concernant l’organisation
         des évènements à venir sur notre dépôt GitHub.
       </Cta>
-      {
-        latestPosts.length > 0 &&
-        <div>
-          <h2>{ "Latest Posts" }</h2>
-          <PagesList pages={ latestPosts } />
-        </div>
-      }
+      {props.latestPosts &&
+        props.latestPosts.node &&
+        props.latestPosts.node.list &&
+        props.latestPosts.node.list.length > 0 && (
+          <div>
+            <h2>{"Latest Posts"}</h2>
+            <PagesList path="posts" pages={props.latestPosts.node.list} />
+          </div>
+        )}
     </Page>
   )
 }
 
-Homepage.contextTypes = {
-  collection: PropTypes.array.isRequired,
-  metadata: PropTypes.object.isRequired,
-}
+const HomepageContainer = withPhenomicApi(Homepage, props => ({
+  page: query({
+    id: props.params.splat || ""
+  }),
+  latestPosts: query({
+    path: "posts",
+    limit: 6
+  })
+}));
 
-export default Homepage
+export default HomepageContainer;

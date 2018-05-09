@@ -1,8 +1,8 @@
-import React, { PropTypes } from "react"
+import React from "react"
 
 import PagePreview from "../PagePreview"
 
-const PagesList = ({ pages }) => {
+const PagesList = ({ path, pages }) => {
   return (
     <div>
       {
@@ -11,7 +11,7 @@ const PagesList = ({ pages }) => {
         <ul>
           {
           pages.map((page) => (
-            <li key={ page.title }><PagePreview { ...page } /></li>
+            <li key={ page.title }><PagePreview path={path} { ...page } /></li>
           ))
         }
         </ul>
@@ -20,10 +20,6 @@ const PagesList = ({ pages }) => {
     }
     </div>
   )
-}
-
-PagesList.propTypes = {
-  pages: PropTypes.array.isRequired,
 }
 
 export default PagesList

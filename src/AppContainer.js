@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react"
+import React from "react";
 
 import "./index.global.css"
 import "./highlight.global.css"
@@ -56,9 +56,5 @@ const AppContainer = (props) => (
     <Footer />
   </Container>
 )
-
-AppContainer.propTypes = {
-  children: PropTypes.node,
-}
 
 export default AppContainer

@@ -1,13 +1,14 @@
-import React, { PropTypes } from "react"
+import React from "react"
 import { Link } from "react-router"
 import Svg from "react-svg-inline"
 
+import pkg from "../../../package.json";
 import twitterSvg from "../icons/iconmonstr-twitter-1.svg"
 import gitHubSvg from "../icons/iconmonstr-github-1.svg"
 
 import styles from "./index.css"
 
-const Header = (props, { metadata: { pkg } }) => (
+const Header = (props) => (
   <header className={ styles.header }>
     <nav className={ styles.nav }>
       <div className={ styles.navPart1 }>
@@ -45,9 +46,5 @@ const Header = (props, { metadata: { pkg } }) => (
     </nav>
   </header>
 )
-
-Header.contextTypes = {
-  metadata: PropTypes.object.isRequired,
-}
 
 export default Header

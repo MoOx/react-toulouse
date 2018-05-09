@@ -80,6 +80,7 @@ body {
 /* minimal styling, prefer removing this and use local styles */
 a {
   color: var(--mainColor);
+  word-break: break-word; /* avoind long url to broke width on small screen */
 }
 
 /* handy for content */

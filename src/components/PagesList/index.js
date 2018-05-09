@@ -6,7 +6,7 @@ const PagesList = ({ path, pages }) => {
   return (
     <div>
       {pages.length ? (
-        <ul>
+        <ul style={{ margin: 0, padding: 0 }}>
           {pages.map(page => (
             <li key={page.title}>
               <PagePreview path={path} {...page} />

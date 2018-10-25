@@ -39,10 +39,11 @@ const Homepage = props => {
 
 const HomepageContainer = withPhenomicApi(Homepage, props => ({
   page: query({
-    id: props.params.splat || ""
+    id: props.params.splat || "",
+    path: "content"
   }),
   latestPosts: query({
-    path: "meetup"
+    path: "content/meetup"
   })
 }));
 

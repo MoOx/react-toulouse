@@ -5,7 +5,7 @@ import Page from "./Page";
 
 const PageContainer = withPhenomicApi(Page, props => ({
   page: query({
-    id: props.params.splat || ""
+    id: "content/" + (props.params.splat || "index")
   })
 }));
 

@@ -12,7 +12,25 @@ afin de faire découvrir ou approfondir l'écosystème React et son ensemble.
 
 ---
 
+## Prochaine rencontre
+
 La prochaine rencontre aura lieu le **20 novembre 2018** (de 18:30 à 20:30) à [**IoT Valley 2, locaux Simplon** (
 _231 Rue Pierre et Marie Curie, 31670 Labège_)](https://www.openstreetmap.org/way/67896904).
 
 📍 [https://meetup.com/ReactJS-React-Native-Toulouse/events/255823621/](https://meetup.com/ReactJS-React-Native-Toulouse/events/255823621/)
+
+---
+
+<center>
+
+📅 [Meetup](https://meetup.com/ReactJS-React-Native-Toulouse)
+|
+🐦 [Twitter](https://twitter.com/ReactToulouse)
+|
+🎬 [Youtube](https://www.youtube.com/channel/UCcTrYHzB_36Mr0kXf78Kjzw)
+|
+💻 [GitHub](https://github.com/MoOx/react-toulouse.git)
+
+</center>
+
+---

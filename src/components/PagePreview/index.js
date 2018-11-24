@@ -6,7 +6,7 @@ const PagePreview = ({ path, id, title, date }) => {
 
   return (
     <div style={{ fontSize: "24px" }}>
-      <Link to={`${path}/${id}`}>{title}</Link>
+      <Link to={`${path}/${id}/`}>{title}</Link>
       {pageDate && (
         <small>
           {" "}

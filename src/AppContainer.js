@@ -44,7 +44,6 @@ if (typeof window !== "undefined") {
 
   // now that everything is ready, log initial page
   ga("send", "pageview");
-  console.log("pageview");
 }
 
 const AppContainer = props => (

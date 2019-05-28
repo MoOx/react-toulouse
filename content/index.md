@@ -16,9 +16,13 @@ afin de faire découvrir ou approfondir l'écosystème React et son ensemble.
 
 ## Prochaine rencontre
 
+<!--
 La prochaine rencontre n'est pas définie. [N'hésitez pas à faire bouger les propositions !](https://github.com/MoOx/react-toulouse/issues).
 
 🗣 Vous pouvez aussi venir en discuter dans le salon [#react du Slack des communautés de Toulouse.](https://communautes-toulouse.slack.com/join/shared_invite/enQtMjkxMDI4MzY0NzIxLWYwZjFhYTNmNWQ5ZDhkODhkZDQxMTcyNGZkOWQ5MWE3NTAwMmZkY2U0OWVmMWJjYzNkMzA3YTc2NmJkODVlNWI)
+-->
+
+https://www.meetup.com/ReactJS-React-Native-Toulouse/events/261825414/
 
 <!---
 

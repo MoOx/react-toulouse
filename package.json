@@ -37,5 +37,8 @@
     "presets": [
       "@phenomic/preset-react-app"
     ]
+  },
+  "engines": {
+    "node": "^10.0.0"
   }
 }
